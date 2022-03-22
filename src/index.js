@@ -1,77 +1,14 @@
 /**
- * Represents a book.
+ * Represents a vending machine have americano hot and iced
  * @constructor
- * @param {string} title - The title of the book.
- * @param {string} author - The author of the book.
- */
-function Book(title, author) {}
-
-/**
- * Both of these will link to the bar function.
- * @see {@link bar}
- * @see bar
- */
-function foo() {}
-
-// Use the inline {@link} tag to include a link within a free-form description.
-/**
- * @see {@link foo} for further information.
- * @see {@link http://github.com|GitHub}
- */
-function bar() {}
-
-/**
- * Generic dairy product.
- * @constructor
- */
-function DairyProduct() {}
-
-/**
- * Check whether the dairy product is solid at room temperature.
- * @abstract
- * @return {boolean}
- */
-DairyProduct.prototype.isSolid = function () {
-  throw new Error('must be implemented by subclass!');
-};
-
-/**
- * Cool, refreshing milk.
- * @constructor
- * @augments DairyProduct
- */
-function Milk() {}
-
-/**
- * Check whether milk is solid at room temperature.
- * @return {boolean} Always returns false.
- */
-Milk.prototype.isSolid = function () {
-  return false;
-};
-
-// vendingMachine.getItem(1000)
-
-// // === 아이스 아메리카노(1/10개)를 1000원에 구매했습니다. ===
-
-// vendingMachine.getItem(900)
-
-// // === 따뜻한 아메리카노 (1/5개)를 900원에 구매했습니다. ===
-
-// TODO: VendingMachine 클래스?
-
-/**
- * VendingMachine 설명
- * @constructor
- * @param {number} hotAmericanoCount
- * @param {number} icedAmericanoCount
+ * @param {number} hotAmericanoCount - The initial count of hot americano vending machine will have.
+ * @param {number} icedAmericanoCount - The initial count of iced americano vending machine will have.
  */
 function VendingMachine(hotAmericanoCount, icedAmericanoCount) {}
 
 /**
- * VendingMachine.prototype.getItem 설명
- * @param {number} money
+ * User can buy item. Depending on money, decrease the count of item that vending machine have.
+ * @param {number} money - Money over 1000 buy iced Americano, under 1000 buy hot Americano.
+ * @return {string} return template is `=== {product name} ({purchased amount}/{total amount}개)를 {purchased money}원에 구매했습니다. ===`
  */
-DairyProduct.prototype.getItem = function (money) {
-  throw new Error('must be implemented by subclass!');
-};
+VendingMachine.prototype.getItem = function (money) {};
